@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: banking_app_deploy
+  name: banking-app-deploy
   labels:
-    app: banking_app
+    app: banking-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: banking_app
+      app: banking-app
   template:
     metadata:
       labels:
-        app: banking_app
+        app: banking-app
     spec:
       containers:
-      - name: banking_app-container
+      - name: banking-app-container
         image: aishwaryagkrish/banking_app
         ports:
         - containerPort: 8082
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: banking_app-np-service
+  name: banking-app-np-service
   labels:
-    app: banking_app
+    app: banking-app
 spec:
   selector:
-    app: banking_app
+    app: banking-app
 
   type: NodePort
   ports:
